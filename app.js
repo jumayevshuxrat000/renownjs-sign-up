@@ -1,6 +1,3 @@
-
-
-
 const signUpForm = document.querySelector(".sign-up-form");
 const signInForm = document.querySelector(".sign-in-form");
 
@@ -19,9 +16,9 @@ signUpForm.addEventListener("submit", (e) => {
     const email = signUpForm.querySelector("input[placeholder='Email']").value.trim();
     const password = signUpForm.querySelector("input[placeholder='Password']").value.trim();
 
-    validateInput("Name", name, 1); 
-    validateInput("Username", username, 4); 
-    validateInput("Password", password, 6); 
+    validateInput("Name", name, 1);
+    validateInput("Username", username, 4);
+    validateInput("Password", password, 6);
 
     const users = JSON.parse(localStorage.getItem("users")) || [];
     if (users.some((user) => user.username === username)) {
@@ -39,17 +36,15 @@ signUpForm.addEventListener("submit", (e) => {
 });
 
 signInForm.addEventListener("submit", (e) => {
-  e.preventDefault(); 
+  e.preventDefault();
 
   try {
     const username = signInForm.querySelector("input[placeholder='Username']").value.trim();
     const password = signInForm.querySelector("input[placeholder='Password']").value.trim();
 
-    // Validation
-    validateInput("Username", username, 4); 
-    validateInput("Password", password, 6); 
+    validateInput("Username", username, 4);
+    validateInput("Password", password, 6);
 
-    // Check if user exists
     const users = JSON.parse(localStorage.getItem("users")) || [];
     const user = users.find(
       (user) => user.username === username && user.password === password
@@ -60,12 +55,11 @@ signInForm.addEventListener("submit", (e) => {
     }
 
     alert(`Welcome back, ${user.name}!`);
-    window.location.href = "./welcome.html"; 
+    window.location.href = "./welcomeback.html";
   } catch (error) {
-    alert(error); 
+    alert(error);
   }
 });
-
 
 const signUpBtn = document.getElementById("sign-up-btn");
 const signInBtn = document.getElementById("sign-in-btn");
@@ -78,3 +72,23 @@ signUpBtn.addEventListener("click", () => {
 signInBtn.addEventListener("click", () => {
   container.classList.remove("sign-up-mode");
 });
+
+function showAllUsers() {
+  const users = JSON.parse(localStorage.getItem("users")) || [];
+  if (users.length === 0) {
+    console.log("No users found.");
+  } else {
+    console.log("Registered Users:");
+    users.forEach((user, index) => {
+      console.log(`User ${index + 1}:`);
+      console.log(`- Name: ${user.name || "N/A"}`);
+      console.log(`- Username: ${user.username}`);
+      console.log(`- Email: ${user.email}`);
+      console.log(`- Password: ${user.password}`);
+    });
+  }
+}
+
+showAllUsers();
+
+  
