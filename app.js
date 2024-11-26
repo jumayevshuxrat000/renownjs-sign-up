@@ -69,7 +69,7 @@ signInForm.addEventListener("submit", (e) => {
     }
 
     alert(`Welcome back, ${user.username}!`);
-    window.location.href = "./welcome.html";
+    window.location.href = "./welcomeback.html";
   } catch (error) {
     alert(error);
   }
