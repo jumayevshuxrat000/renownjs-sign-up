@@ -10,7 +10,6 @@ function validateInput(fieldName, value, minLength) {
   }
 }
 
-// Toggle Sign Up and Sign In mode
 signUpBtn.addEventListener("click", () => {
   container.classList.add("sign-up-mode");
 });
@@ -19,7 +18,6 @@ signInBtn.addEventListener("click", () => {
   container.classList.remove("sign-up-mode");
 });
 
-// Sign Up form submission
 signUpForm.addEventListener("submit", (e) => {
   e.preventDefault();
 
@@ -47,8 +45,6 @@ signUpForm.addEventListener("submit", (e) => {
     alert(error);
   }
 });
-
-// Sign In form submission
 signInForm.addEventListener("submit", (e) => {
   e.preventDefault();
 
