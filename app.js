@@ -73,22 +73,4 @@ signInBtn.addEventListener("click", () => {
   container.classList.remove("sign-up-mode");
 });
 
-function showAllUsers() {
-  const users = JSON.parse(localStorage.getItem("users")) || [];
-  if (users.length === 0) {
-    console.log("No users found.");
-  } else {
-    console.log("Registered Users:");
-    users.forEach((user, index) => {
-      console.log(`User ${index + 1}:`);
-      console.log(`- Name: ${user.name || "N/A"}`);
-      console.log(`- Username: ${user.username}`);
-      console.log(`- Email: ${user.email}`);
-      console.log(`- Password: ${user.password}`);
-    });
-  }
-}
-
-showAllUsers();
-
   
