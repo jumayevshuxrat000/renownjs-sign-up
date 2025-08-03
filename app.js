@@ -65,7 +65,7 @@ signInForm.addEventListener("submit", (e) => {
     }
 
     alert(`Welcome back, ${user.username}!`);
-    window.location.href = "./welcomeback.html";
+    window.location.href = "https://exem-smoky.vercel.app/";
   } catch (error) {
     alert(error);
   }
